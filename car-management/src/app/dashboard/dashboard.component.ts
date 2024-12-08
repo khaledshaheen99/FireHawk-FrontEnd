@@ -51,7 +51,7 @@ export class DashboardComponent implements OnInit {
 
   // Fetch data from the API
   fetchCars(): void {
-    this.http.get<any[]>('http://localhost:3000/cars').subscribe(
+    this.http.get<any[]>('https://firehawk-444003.uc.r.appspot.com/cars').subscribe(
       (data) => {
         this.dataSource.data = data;
         this.dataSource.paginator = this.paginator;
@@ -111,7 +111,7 @@ export class DashboardComponent implements OnInit {
 
   // Export data to CSV
   exportToCSV(): void {
-    this.http.get<any[]>('http://localhost:3000/cars').subscribe(
+    this.http.get<any[]>('https://firehawk-444003.uc.r.appspot.com/cars').subscribe(
       (data) => {
         const csvData = data.map((row) => ({
           Name: row.name,

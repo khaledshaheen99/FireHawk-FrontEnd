@@ -33,7 +33,7 @@ export class AddCarComponent {
     model_year: '',
     origin: '',
   };
-  apiUrl = 'http://localhost:3000/cars';
+  apiUrl = 'https://firehawk-444003.uc.r.appspot.com/cars';
 
   constructor(private http: HttpClient, private router: Router) {}
 
