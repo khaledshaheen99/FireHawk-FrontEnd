@@ -1,36 +1,76 @@
-nav {
-    display: flex;
-    gap: 15px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-    position: relative;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #007bff;
-    cursor: pointer;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  mat-toolbar {
+/* Navbar styling */
+.navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
-    font-family: 'Roboto', sans-serif;
+    height: 64px;
+    background-color: #2a3e4c;
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid #1976d2;
   }
   
-  .app-title {
-    font-size: 24px;
+  .navbar-brand {
+    font-size: 1.8rem;
     font-weight: bold;
-    color: white;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
   }
   
-  button {
-    color: white;
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #1976d2; /* CRM Blue */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-button mat-icon {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-button:hover {
+    background-color: #125e9b;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  .navbar-button.active {
+    background-color: #125e9b;
+    border: 2px solid #ffffff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .navbar-button {
+      width: 100%;
+      justify-content: center;
+    }
   }
   

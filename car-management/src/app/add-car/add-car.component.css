@@ -1,6 +1,49 @@
-form {
+/* General container styling */
+.add-car-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Section title styling */
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Form styling */
+  form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
+    gap: 15px;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #125ca4;
+    color: white;
+  }
   

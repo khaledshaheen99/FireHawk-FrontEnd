@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-filters',
@@ -14,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
   ],
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css'],
@@ -24,9 +26,9 @@ export class FiltersComponent implements OnInit {
 
   filters = {
     name: '',
-    model: '',
+    horsepower: null,
     year: null,
-    price: null,
+    origin: null,
   };
 
   ngOnInit(): void {
@@ -42,9 +44,9 @@ export class FiltersComponent implements OnInit {
   clearFilters(): void {
     this.filters = {
       name: '',
-      model: '',
+      horsepower: null,
       year: null,
-      price: null,
+      origin: null,
     };
     this.filtersChanged.emit(this.filters);
   }

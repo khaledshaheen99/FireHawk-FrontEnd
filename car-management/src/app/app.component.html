@@ -1,6 +1,15 @@
-<nav>
-  <a routerLink="/" routerLinkActive="active">Dashboard</a>
-  <a routerLink="/add-car" routerLinkActive="active">Add Car</a>
-</nav>
+<mat-toolbar class="navbar" color="primary">
+  <span class="navbar-brand">Car Management CRM</span>
+  <div class="navbar-links">
+    <button mat-flat-button routerLink="/" routerLinkActive="active" class="navbar-button">
+      <mat-icon>dashboard</mat-icon>
+      Dashboard
+    </button>
+    <button mat-flat-button routerLink="/add-car" routerLinkActive="active" class="navbar-button">
+      <mat-icon>add_circle</mat-icon>
+      Add New Car
+    </button>
+  </div>
+</mat-toolbar>
 
 <router-outlet></router-outlet>

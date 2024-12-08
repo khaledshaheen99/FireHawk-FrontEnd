@@ -87,9 +87,9 @@ export class DashboardComponent implements OnInit {
 
       const filtersMatch =
         (!this.savedFilters.name || data.name?.toLowerCase().includes(this.savedFilters.name.toLowerCase())) &&
-        (!this.savedFilters.model || data.name?.toLowerCase().includes(this.savedFilters.model.toLowerCase())) &&
+        (!this.savedFilters.horsepower || data.horsepower == this.savedFilters.horsepower)&&
         (!this.savedFilters.year || data.model_year == this.savedFilters.year) &&
-        (!this.savedFilters.price || data.price == this.savedFilters.price);
+        (!this.savedFilters.origin || data.origin == this.savedFilters.origin);
 
       return searchMatch && filtersMatch;
     };
@@ -111,27 +111,39 @@ export class DashboardComponent implements OnInit {
 
   // Export data to CSV
   exportToCSV(): void {
-    const csvData = this.dataSource.filteredData.map((row) => ({
-      Name: row.name,
-      MPG: row.mpg,
-      Cylinders: row.cylinders,
-      Horsepower: row.horsepower,
-      Weight: row.weight,
-      Year: row.model_year,
-      Origin: row.origin,
-    }));
-
-    const csvHeader = Object.keys(csvData[0]).join(',');
-    const csvRows = csvData.map((row) => Object.values(row).join(','));
-
-    const csvContent = [csvHeader, ...csvRows].join('\n');
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.href = url;
-    link.setAttribute('download', 'cars_data.csv');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+    this.http.get<any[]>('http://localhost:3000/cars').subscribe(
+      (data) => {
+        const csvData = data.map((row) => ({
+          Name: row.name,
+          MPG: row.mpg,
+          Cylinders: row.cylinders,
+          Horsepower: row.horsepower,
+          Weight: row.weight,
+          Year: row.model_year,
+          Origin: row.origin,
+        }));
+  
+        if (csvData.length > 0) {
+          const csvHeader = Object.keys(csvData[0]).join(',');
+          const csvRows = csvData.map((row) => Object.values(row).join(','));
+  
+          const csvContent = [csvHeader, ...csvRows].join('\n');
+          const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+          const link = document.createElement('a');
+          const url = URL.createObjectURL(blob);
+          link.href = url;
+          link.setAttribute('download', 'cars_data.csv');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          alert('No data available to export.');
+        }
+      },
+      (error) => {
+        console.error('Error fetching data for CSV export:', error);
+        alert('Failed to fetch data for export. Please try again later.');
+      }
+    );
+  }  
 }

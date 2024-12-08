@@ -1,8 +1,56 @@
-<h2>Add a New Car</h2>
-<form (ngSubmit)="addCar()">
-  <label>Name: <input [(ngModel)]="newCar.name" name="name" /></label><br />
-  <label>Model: <input [(ngModel)]="newCar.model" name="model" /></label><br />
-  <label>Year: <input [(ngModel)]="newCar.year" name="year" type="number" /></label><br />
-  <label>Price: <input [(ngModel)]="newCar.price" name="price" type="number" /></label><br />
-  <button type="submit">Add Car</button>
-</form>
+<div class="add-car-container">
+    <h2 class="section-title">Add a New Car</h2>
+    <form (ngSubmit)="addCar()">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="newCar.name" name="name" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>MPG</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.mpg" name="mpg" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Cylinders</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.cylinders" name="cylinders" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Displacement</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.displacement" name="displacement" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Horsepower</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.horsepower" name="horsepower" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Weight</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.weight" name="weight" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Acceleration</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.acceleration" name="acceleration" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Model Year</mat-label>
+        <input matInput type="number" [(ngModel)]="newCar.model_year" name="model_year" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Origin</mat-label>
+        <mat-select [(ngModel)]="newCar.origin" name="origin" required>
+          <mat-option value="usa">USA</mat-option>
+          <mat-option value="japan">Japan</mat-option>
+          <mat-option value="europe">Europe</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Add Car</button>
+    </form>
+  </div>
+  

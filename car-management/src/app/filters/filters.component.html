@@ -6,18 +6,22 @@
           <input matInput [(ngModel)]="filters.name" name="name" />
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Model</mat-label>
-          <input matInput [(ngModel)]="filters.model" name="model" />
+          <mat-label>Horsepower</mat-label>
+          <input matInput [(ngModel)]="filters.horsepower" name="horsepower" type="number" min="0"/>
         </mat-form-field>
       </div>
       <div class="filter-row">
         <mat-form-field appearance="outline">
           <mat-label>Year</mat-label>
-          <input matInput [(ngModel)]="filters.year" name="year" type="number" />
+          <input matInput [(ngModel)]="filters.year" name="year" type="number" min="0"/>
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Price</mat-label>
-          <input matInput [(ngModel)]="filters.price" name="price" type="number" />
+            <mat-label>Origin</mat-label>
+            <mat-select [(ngModel)]="filters.origin" name="origin">
+              <mat-option value="usa">USA</mat-option>
+              <mat-option value="japan">Japan</mat-option>
+              <mat-option value="europe">Europe</mat-option>
+            </mat-select>
         </mat-form-field>
       </div>
       <div class="filter-actions">
