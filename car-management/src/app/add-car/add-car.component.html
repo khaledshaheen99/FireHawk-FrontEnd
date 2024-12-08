@@ -1,1 +1,8 @@
-<p>add-car works!</p>
+<h2>Add a New Car</h2>
+<form (ngSubmit)="addCar()">
+  <label>Name: <input [(ngModel)]="newCar.name" name="name" /></label><br />
+  <label>Model: <input [(ngModel)]="newCar.model" name="model" /></label><br />
+  <label>Year: <input [(ngModel)]="newCar.year" name="year" type="number" /></label><br />
+  <label>Price: <input [(ngModel)]="newCar.price" name="price" type="number" /></label><br />
+  <button type="submit">Add Car</button>
+</form>

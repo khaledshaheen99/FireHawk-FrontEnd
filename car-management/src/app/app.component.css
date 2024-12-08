@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    position: relative;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  button {
+    color: white;
+  }
+  

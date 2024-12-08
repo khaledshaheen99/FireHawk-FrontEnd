@@ -1,0 +1,12 @@
+.filter-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+  
